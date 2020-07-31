@@ -1,12 +1,12 @@
 # 此项目本是个付费主题，可是他们放弃了，我不想 Malio 就此消失就放到了这里
-# 不能删改页面底部的 Powered by SSPANEL.，不能删改staff页面的任何信息。
+# 不能删改页面底部的 Powered by SSPANEL，不能删改staff页面的任何信息。
 ## 删除Powered by SSPANEL可能会导致你的网站被D，现在 Theme by editXY 可以随意去掉
 
 本主题包含了SSPANEL的完整代码，需要删除原来的面板，然后全新安装（数据库通用），操作前请备份面板
 
 ## 贡献
 
-[提出新想法 & 提交 Bug](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/issues/new) | [改善文档 & 投稿](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/Wiki) | [Fork & Pull Request](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/fork)
+[提出新想法 & 提交 Bug](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/issues/new) | [改善文档 & 投稿](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/Wiki) | [Fork & Pull Request](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/pulls)
 
 由于原开发团队已经放弃Malio主题，因此此项目欢迎各种贡献，包括但不限于改进，新功能，文档和代码改进，问题和错误报告。
 
