@@ -23,7 +23,7 @@
 需要去.config.php打开订阅记录的开关才会记录订阅
 
 ## Telegram
-想进主题交流群请联系 [@editXY](https://t.me/editXY) 获取交流群链接
+主题交流群 [@章鱼哥的SSPanel之家](https://t.me/woaizyg)
 
 [TG频道](https://t.me/malio_for_sspanel) ，有新功能或优化都会在频道里发广播，所以请一定要关注频道
 
