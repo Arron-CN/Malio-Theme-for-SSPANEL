@@ -25,8 +25,6 @@
 ## Telegram
 主题交流群 [@章鱼哥的SSPanel之家](https://t.me/woaizyg)
 
-[TG频道](https://t.me/malio_for_sspanel) ，有新功能或优化都会在频道里发广播，所以请一定要关注频道
-
 ## AFF
 推荐的支付平台👉 [BitPayX](https://merchants.mugglepay.com/user/register?ref=MP8DF1B016220D) ，支持数字货币、支付宝、微信，提款数字货币
 
