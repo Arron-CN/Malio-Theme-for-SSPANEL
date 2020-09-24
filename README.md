@@ -4,8 +4,6 @@
 
 本主题包含了SSPANEL的完整代码，需要删除原来的面板，然后全新安装（数据库通用），操作前请备份面板
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FCadwalader307%2FMalio-Theme-for-SSPANEL.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FCadwalader307%2FMalio-Theme-for-SSPANEL?ref=badge_large)
-
 ## 贡献
 
 [提出新想法 & 提交 Bug](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/issues/new) | [改善文档 & 投稿](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/Wiki) | [Fork & Pull Request](https://github.com/Cadwalader307/Malio-Theme-for-SSPANEL/pulls)
