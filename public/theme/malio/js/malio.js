@@ -1,5 +1,3 @@
-// const csKdOsOtLF = ['你的授權域名.com', 'www.你的授權域名.com'];
-
 const csKdOsOtLF = {
     'includes' : function(){
         return true;
