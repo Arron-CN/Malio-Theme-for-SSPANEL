@@ -1,5 +1,6 @@
 可以使用download.sh脚本自动下载的客户端:
 Clash-Windows.7z
+Clash-Windows.exe
 ClashX.dmg
 ss-android.apk
 ss-win.zip

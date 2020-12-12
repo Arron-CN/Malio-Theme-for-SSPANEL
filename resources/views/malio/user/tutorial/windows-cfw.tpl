@@ -143,7 +143,8 @@
                             <p>安装时请选择 为使用这台电脑的任何人安装（所有用户）<br>
                               运行时请右键，以管理员身份运行
                             </p>
-                            <a href="/client-download/Clash-Windows.7z" class="btn btn-icon icon-left btn-primary btn-app btn-lg btn-round" target="blank"><i class="fas fa-download"></i> 下载客户端</a>
+                            <a href="/client-download/Clash-Windows.7z" class="btn btn-icon icon-left btn-primary btn-app btn-lg btn-round" target="blank"><i class="fas fa-download"></i> 下载客户端(7-Zip)</a>
+                            <a href="/client-download/Clash-Windows.exe" class="btn btn-icon icon-left btn-primary btn-app btn-lg btn-round" target="blank"><i class="fas fa-download"></i> 下载客户端(EXE)</a>
                           </div>
                           <div class="right-pic col-xs-12 col-md-6 col-lg-6">
                             <div class="tutorial-pic hide-on-mobie">
