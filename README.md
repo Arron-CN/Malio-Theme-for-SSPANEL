@@ -1,4 +1,3 @@
-# 此项目本是个付费主题，可是他们放弃了，我不想 Malio 就此消失就放到了这里
 # 不能删改页面底部的 Powered by SSPANEL，不能删改staff页面的任何信息。
 ## 删除Powered by SSPANEL可能会导致你的网站被D，现在 Theme by editXY 可以随意去掉
 
