@@ -27,11 +27,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `alive_ip` (
-  `id`       bigint(20) NOT NULL,
-  `nodeid`   int(11)    NOT NULL,
-  `userid`   int(11)    NOT NULL,
-  `ip`       text       NOT NULL,
-  `datetime` bigint(20) NOT NULL
+  `id`       bigint(20)   NOT NULL,
+  `nodeid`   int(11)      NOT NULL,
+  `userid`   int(11)      NOT NULL,
+  `ip`       varchar(182) NOT NULL,
+  `datetime` bigint(20)   NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -53,10 +53,10 @@ CREATE TABLE IF NOT EXISTS `announcement` (
 --
 
 CREATE TABLE IF NOT EXISTS `blockip` (
-  `id`       bigint(20) NOT NULL,
-  `nodeid`   int(11)    NOT NULL,
-  `ip`       text       NOT NULL,
-  `datetime` bigint(20) NOT NULL
+  `id`       bigint(20)   NOT NULL,
+  `nodeid`   int(11)      NOT NULL,
+  `ip`       varchar(182) NOT NULL,
+  `datetime` bigint(20)   NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -101,11 +101,11 @@ CREATE TABLE IF NOT EXISTS `link` (
 --
 
 CREATE TABLE IF NOT EXISTS `login_ip` (
-  `id`       bigint(20) NOT NULL,
-  `userid`   bigint(20) NOT NULL,
-  `ip`       text       NOT NULL,
-  `datetime` bigint(20) NOT NULL,
-  `type`     int(11)    NOT NULL
+  `id`       bigint(20)   NOT NULL,
+  `userid`   bigint(20)   NOT NULL,
+  `ip`       varchar(182) NOT NULL,
+  `datetime` bigint(20)   NOT NULL,
+  `type`     int(11)      NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -179,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `ss_node` (
   `node_bandwidth_limit`    bigint(20)   NOT NULL DEFAULT '0',
   `bandwidthlimit_resetday` int(11)      NOT NULL DEFAULT '0',
   `node_heartbeat`          bigint(20)   NOT NULL DEFAULT '0',
-  `node_ip`                 text
+  `node_ip`                 varchar(182)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -230,10 +230,10 @@ CREATE TABLE IF NOT EXISTS `ss_password_reset` (
 --
 
 CREATE TABLE IF NOT EXISTS `unblockip` (
-  `id`       bigint(20) NOT NULL,
-  `ip`       text       NOT NULL,
-  `datetime` bigint(20) NOT NULL,
-  `userid`   bigint(20) NOT NULL
+  `id`       bigint(20)   NOT NULL,
+  `ip`       varchar(182) NOT NULL,
+  `datetime` bigint(20)   NOT NULL,
+  `userid`   bigint(20)   NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -267,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `expire_time`         int(11)       NOT NULL DEFAULT '0',
   `method`              varchar(64)   NOT NULL DEFAULT 'rc4-md5',
   `is_email_verify`     tinyint(4)    NOT NULL DEFAULT '0',
-  `reg_ip`              varchar(128)  NOT NULL DEFAULT '127.0.0.1',
+  `reg_ip`              varchar(182)  NOT NULL DEFAULT '127.0.0.1',
   `node_speedlimit`     text          NOT NULL,
   `node_connector`      int(11)       NOT NULL DEFAULT '0',
   `is_admin`            int(2)        NOT NULL DEFAULT '0',
@@ -567,7 +567,7 @@ CREATE TABLE IF NOT EXISTS `ss_node` (
   `node_bandwidth_limit`    bigint(20)   NOT NULL DEFAULT '0',
   `bandwidthlimit_resetday` int(11)      NOT NULL DEFAULT '0',
   `node_heartbeat`          bigint(20)   NOT NULL DEFAULT '0',
-  `node_ip`                 text
+  `node_ip`                 varchar(182)
 ) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -622,9 +622,9 @@ ALTER TABLE `user` ADD `protocol` VARCHAR(128) NOT NULL DEFAULT 'origin' AFTER `
 
 
 
-ALTER TABLE `user` ADD `forbidden_ip` LONGTEXT NULL DEFAULT '' AFTER `obfs_param`, ADD `forbidden_port` LONGTEXT NULL DEFAULT '' AFTER `forbidden_ip`, ADD `disconnect_ip` LONGTEXT NULL DEFAULT '' AFTER `forbidden_port`;
+ALTER TABLE `user` ADD `forbidden_ip` varchar(182) NULL DEFAULT '' AFTER `obfs_param`, ADD `forbidden_port` LONGTEXT NULL DEFAULT '' AFTER `forbidden_ip`, ADD `disconnect_ip` varchar(182) NULL DEFAULT '' AFTER `forbidden_port`;
 
-CREATE TABLE `disconnect_ip` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `userid` BIGINT NOT NULL , `ip` TEXT NOT NULL , `datetime` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `disconnect_ip` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `userid` BIGINT NOT NULL , `ip` varchar(182) NOT NULL , `datetime` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 ALTER TABLE `user` CHANGE `node_speedlimit` `node_speedlimit` DECIMAL(12,2) NOT NULL DEFAULT '0.00';
 
 ALTER TABLE `ss_node` CHANGE `node_speedlimit` `node_speedlimit` DECIMAL(12,2) NOT NULL DEFAULT '0.00';
@@ -633,7 +633,7 @@ ALTER TABLE `user`
   DROP `relay_enable`,
   DROP `relay_info`;
 ALTER TABLE `user` CHANGE `protocol` `protocol` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'origin', CHANGE `obfs` `obfs` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'plain';
-CREATE TABLE `email_verify` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `email` TEXT NOT NULL , `ip` TEXT NOT NULL , `code` TEXT NOT NULL , `expire_in` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;ALTER TABLE `user` ADD `is_hide` INT NOT NULL DEFAULT '0' AFTER `disconnect_ip`;
+CREATE TABLE `email_verify` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `email` TEXT NOT NULL , `ip` varchar(182) NOT NULL , `code` TEXT NOT NULL , `expire_in` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;ALTER TABLE `user` ADD `is_hide` INT NOT NULL DEFAULT '0' AFTER `disconnect_ip`;
 
 
 CREATE TABLE `detect_list` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `name` LONGTEXT NOT NULL , `text` LONGTEXT NOT NULL , `regex` LONGTEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
@@ -650,13 +650,13 @@ ALTER TABLE `user` ADD `is_multi_user` INT NOT NULL DEFAULT '0' AFTER `is_hide`;
 ALTER TABLE `ss_node` ADD `mu_only` INT NULL DEFAULT '0' AFTER `custom_rss`;
 
 CREATE TABLE IF NOT EXISTS `relay` (
-  `id`             bigint(20) NOT NULL,
-  `user_id`        bigint(20) NOT NULL,
-  `source_node_id` bigint(20) NOT NULL,
-  `dist_node_id`   bigint(20) NOT NULL,
-  `dist_ip`        text       NOT NULL,
-  `port`           int(11)    NOT NULL,
-  `priority`       int(11)    NOT NULL
+  `id`             bigint(20)   NOT NULL,
+  `user_id`        bigint(20)   NOT NULL,
+  `source_node_id` bigint(20)   NOT NULL,
+  `dist_node_id`   bigint(20)   NOT NULL,
+  `dist_ip`        varchar(182) NOT NULL,
+  `port`           int(11)      NOT NULL,
+  `priority`       int(11)      NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `relay`
@@ -706,7 +706,7 @@ CREATE TABLE IF NOT EXISTS `user_subscribe_log` (
   `user_id`            int(11)      NOT NULL COMMENT '用户 ID',
   `email`              varchar(32)  NOT NULL COMMENT '用户邮箱',
   `subscribe_type`     varchar(20)  DEFAULT NULL COMMENT '获取的订阅类型',
-  `request_ip`         varchar(128) DEFAULT NULL COMMENT '请求 IP',
+  `request_ip`         varchar(182) DEFAULT NULL COMMENT '请求 IP',
   `request_time`       datetime     DEFAULT NULL COMMENT '请求时间',
   `request_user_agent` text COMMENT '请求 UA 信息',
   PRIMARY KEY (`id`)
