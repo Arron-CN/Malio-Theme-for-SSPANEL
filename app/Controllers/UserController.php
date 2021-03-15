@@ -26,6 +26,7 @@ use App\Models\DetectLog;
 use App\Models\DetectRule;
 use App\Models\NodeOnlineLog;
 use App\Models\NodeInfoLog;
+use Ramsey\Uuid\Uuid;
 
 use Exception;
 use voku\helper\AntiXSS;
@@ -1700,19 +1701,29 @@ class UserController extends BaseController
         $user = Auth::getUser();
         $pwd = $request->getParam('sspwd');
         $pwd = trim($pwd);
+        $current_timestamp = time();
+        $new_uuid = Uuid::uuid3(Uuid::NAMESPACE_DNS, 
+        $user->email . '|' . $current_timestamp);
+        $otheruuid = User::where('uuid', $new_uuid)->first();
 
         if ($pwd == '') {
             $res['ret'] = 0;
             $res['msg'] = '密码不能为空';
             return $response->getBody()->write(json_encode($res));
         }
-
         if (!Tools::is_validate($pwd)) {
             $res['ret'] = 0;
             $res['msg'] = '密码无效';
             return $response->getBody()->write(json_encode($res));
         }
-
+        if ($otheruuid != null) {
+            $res['ret'] = 0;
+            $res['msg'] = '目前出现一些问题，请稍后再试';
+            return $response->getBody()->write(json_encode($res));
+        }
+        
+        $user->uuid = $new_uuid;
+        $user->save();
         $user->updateSsPwd($pwd);
         $res['ret'] = 1;
 
