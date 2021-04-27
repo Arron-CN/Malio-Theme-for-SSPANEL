@@ -70,6 +70,8 @@ secret: '{if array_key_exists("secret",$opts)}{$opts['secret']}{else}{/if}'
 {include file='rule/ConnersHua_Pro.yaml'}
 {elseif $Profiles == 'ConnersHua_BacktoCN'}
 {include file='rule/ConnersHua_BacktoCN.yaml'}
+{elseif $Profiles == 'sspanel'}
+{include file='rule/sspanel.yaml'}
 {else}
 {include file='rule/lhie1_Rule.yaml'}
 {/if}
