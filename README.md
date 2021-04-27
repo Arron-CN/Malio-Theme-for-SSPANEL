@@ -31,7 +31,7 @@
 主题交流群 [@章鱼哥的SSPanel之家](https://t.me/woaizyg)
 
 ## AFF
-推荐的支付平台👉 [BitPayX](https://merchants.mugglepay.com/user/register?ref=MP909FA42B0251) ，支持数字货币、支付宝、微信，提款数字货币
+推荐的支付平台👉 [BitPayX](https://wallet.mugglepay.com/?refer=5C59MRKH) ，支持数字货币、支付宝、微信，提款数字货币
 
 ## CREDIT
 基于 [Anankke](https://github.com/Anankke)，[galaxyq](https://github.com/galaxychuck)，[dumplin](https://github.com/dumplin233)，[Rin SAMA](https://github.com/mxihan)，[Miku](https://github.com/xcxnig)，[Tony Zou](https://github.com/ZJY2003)，[Nymph](https://github.com/laurieryayoi) 维护的 [SSPanel-Uim](https://github.com/Anankke/SSPanel-Uim) 修改
