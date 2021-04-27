@@ -957,7 +957,7 @@ class LinkController extends BaseController
                 $Profiles = (string) trim($opts['profiles']);
                 $userapiUrl .= ('&profiles=' . $Profiles);
             } else {
-                $Profiles = '123456'; // 默认策略组
+                $Profiles = 'sspanel'; // 默认策略组123456
             }
             $ProxyGroups = ConfController::getClashConfProxyGroup($Proxys, AppsProfiles::Clash()[$Profiles]['ProxyGroup']);
             $ProxyGroups = ConfController::fixClashProxyGroup($ProxyGroups, AppsProfiles::Clash()[$Profiles]['Checks']);
