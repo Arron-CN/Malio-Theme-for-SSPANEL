@@ -77,7 +77,7 @@
                       <ul class="list-unstyled user-details list-unstyled-border list-unstyled-noborder">
                         <li class="media">
                           {$region = substr($node['name'],0,6)}
-                          <img alt="image" class="mr-3 rounded-circle" width="50" src="/theme/malio/assets/modules/flag-icon-css/flags/1x1/{if $malio_config['flag_mode']=='node-name'}{if $flags[$region] != ''}{$flags[$region]}{else}un{/if}{else}{$node['status']}{/if}.svg">
+                          <img alt="image" class="mr-3 rounded-circle" width="50" src="/theme/malio/assets/modules/flag-icon-css/flags/1x1/{if $malio_config['flag_mode']=='node-name'}{if isset($flags[$region])}{$flags[$region]}{else}un{/if}{else}{$node['status']}{/if}.svg">
                           <div class="media-body">
                             <div class="media-title node-status {if $node['online']=='1' or $node['sort'] == 14}node-is-online{else}node-is-offline{/if}">{current(explode(" - ", $node['name']))}</div>
                             <div class=" text-job text-muted">{$node['info']}</div>
